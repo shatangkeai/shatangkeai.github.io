@@ -1,0 +1,582 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数据结构之枚举 | 做自己喜欢的</title><meta name="keywords" content="数据结构,算法"><meta name="author" content="砂糖"><meta name="copyright" content="砂糖"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="枚举算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构之枚举">
+<meta property="og:url" content="http://linyunshen.xyz/posts/51148.html">
+<meta property="og:site_name" content="做自己喜欢的">
+<meta property="og:description" content="枚举算法">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shatangkeai/images/img/二次元 (12).jpg">
+<meta property="article:published_time" content="2022-01-25T03:41:03.000Z">
+<meta property="article:modified_time" content="2022-02-16T01:05:03.246Z">
+<meta property="article:author" content="砂糖">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/shatangkeai/images/img/二次元 (12).jpg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/shatangkeai/images/logo/shatang.png"><link rel="canonical" href="http://linyunshen.xyz/posts/51148"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#212121"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/siteicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/assets/siteicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/assets/siteicon/favicon-16x16.png"/><link rel="mask-icon" href="/assets/siteicon/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-16 09:05:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="做自己喜欢的" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="wizard-scene"><div class="wizard-objects"><div class="wizard-square"></div><div class="wizard-circle"></div><div class="wizard-triangle"></div></div><div class="wizard"><div class="wizard-body"></div><div class="wizard-right-arm"><div class="wizard-right-hand"></div></div><div class="wizard-left-arm"><div class="wizard-left-hand"></div></div><div class="wizard-head"><div class="wizard-beard"></div><div class="wizard-face"><div class="wizard-adds"></div></div><div class="wizard-hat"><div class="wizard-hat-of-the-hat"></div><div class="wizard-four-point-star --first"></div><div class="wizard-four-point-star --second"></div><div class="wizard-four-point-star --third"></div></div></div></div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/shatangkeai/images/logo/shatang.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw fas fa-tags faa-tada"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tiger"></use></svg><span> 拓展</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="fa-fw fa fa-comments faa-tada"></i><span> 哔哩哔哩</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友链</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/shatangkeai/images/img/二次元 (12).jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" onclick="btf.scrollToDest(0, 500)" data-title="枚举算法">数据结构之枚举</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw fas fa-tags faa-tada"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tiger"></use></svg><span> 拓展</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="fa-fw fa fa-comments faa-tada"></i><span> 哔哩哔哩</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友链</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据结构之枚举</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-01-25T03:41:03.000Z" title="Created 2022-01-25 11:41:03">2022-01-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-02-16T01:05:03.246Z" title="Updated 2022-02-16 09:05:03">2022-02-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/">蓝桥杯</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据结构之枚举"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一-枚举是什么"><a href="#一-枚举是什么" class="headerlink" title="一.枚举是什么"></a>一.枚举是什么</h1><p>进行归纳推理的时候,考察每一种的情况,得出一般结论,这就为枚举</p>
+<h1 id="二-枚举的算法例题"><a href="#二-枚举的算法例题" class="headerlink" title="二.枚举的算法例题"></a>二.枚举的算法例题</h1><h2 id="1-完美立方"><a href="#1-完美立方" class="headerlink" title="1.完美立方"></a>1.完美立方</h2><p>题目:</p>
+<blockquote>
+<p>费马大定理断言：当整数n&gt;2时，关于a，b，c的方程an=bn+cn没有正整数解。该定理被提出后，历经三百多年，经历多人猜想辩证，最终在1995年被英国数学家安德鲁·怀尔斯证明。当然，可以找到大于1的4个整数满足完美立方等式：a3=b3+c3+d3（例如12^3=6^3+8^3+10^3）。编写一个程序，对于任意给定的正整数N（N ≤100），寻找所有的四元组（a,b,c,d），满足a3=b3+c3+d3，其中1&lt;a，b，c，d≤N。</p>
+</blockquote>
+<p>输入:</p>
+<p>一个整数N(N&lt;=100)</p>
+<p>输出格式:</p>
+<p>按照a的值从小到大，每行输出一个完美立方等式，其中b，c，d按照非降序排列输出。若两个完美立方等式中a的值相同，则b的值小的先输出；在b值相等的情况下，c值小的先输出；在b，c都相等的情况下，d值小的先输出。</p>
+<p>输入输出实例:</p>
+<p>输入 :24</p>
+<p>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Cube &#x3D; 6, Triple &#x3D; (3,4,5)</span><br><span class="line">Cube &#x3D; 12, Triple &#x3D; (6,8,10)</span><br><span class="line">Cube &#x3D; 18, Triple &#x3D; (2,12,16)</span><br><span class="line">Cube &#x3D; 18, Triple &#x3D; (9,12,15)</span><br><span class="line">Cube &#x3D; 19, Triple &#x3D; (3,10,18)</span><br><span class="line">Cube &#x3D; 20, Triple &#x3D; (7,14,17)</span><br><span class="line">Cube &#x3D; 24, Triple &#x3D; (12,16,20)</span><br></pre></td></tr></table></figure><br>分析</p>
+<p>通过对每一个数进行枚举,每一个数都要比前面一个数大才可以防止出现重复的情况</p>
+<p>代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> a = <span class="number">2</span>; a &lt;= n; a++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> b = <span class="number">2</span>; b &lt; a; b++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> c = b; c &lt; a; c++)&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> d = c; d &lt; a; d++)&#123;</span><br><span class="line">					<span class="keyword">if</span>(a*a*a == b*b*b + c*c*c + d*d*d)&#123;</span><br><span class="line">						<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Cube = &quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot;, &quot;</span>;</span><br><span class="line">						<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Triple = (&quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot;,&quot;</span> &lt;&lt; c &lt;&lt; <span class="string">&quot;,&quot;</span> &lt;&lt; d &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-生理周期"><a href="#2-生理周期" class="headerlink" title="2.生理周期"></a>2.生理周期</h2><p>题目</p>
+<p>人生来就有三个生理周期，分别为体力、感情和智力周期，它们的周期长度为 2323 天、2828 天和 3333 天。每一个周期中有一天是高峰。在高峰这天，人会在相应的方面表现出色。例如，智力周期的高峰，人会思维敏捷，精力容易高度集中。因为三个周期的周长不同，所以通常三个周期的高峰不会落在同一天。对于每个人，我们想知道何时三个高峰落在同一天。对于每个周期，我们会给出从当前年份的第一天开始，到出现高峰的天数（不一定是第一次高峰出现的时间）。</p>
+<p>你的任务是给定一个从当年第一天开始数的天数，输出从给定时间开始（不包括给定时间）下一次三个高峰落在同一天的时间（距给定时间的天数）。例如：给定时间为 1010，下次出现三个高峰同天的时间是 1212，则输出 22（注意这里不是 33）。</p>
+<p>输入</p>
+<p>一行，包含四个整数：p, e, ip,e,i 和 dd，相邻两个整数之间用单个空格隔开。p, e, ip,e,i 分别表示体力、情感和智力高峰出现的时间（时间从当年的第一天开始计算）。dd 是给定的时间，可能小于 p, e,p,e, 或 ii。 所有给定时间是非负的并且小于等于 365365，所求的时间小于等于 2125221252。</p>
+<p>输出</p>
+<p>一个整数，即从给定时间起，下一次三个高峰同天的时间（距离给定时间的天数）。</p>
+<p>例如</p>
+<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 5 6 7</span><br></pre></td></tr></table></figure><br>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">16994</span><br></pre></td></tr></table></figure><br>分析:</p>
+<p>通过题目可以从给定的时间开始一天一天遍历,但是这样显然很浪费时间,可以从给定的第一个周期的倍数来遍历,,找到符合第一个周期的数进行第二个周期的遍历,这样的遍历量会减少很多<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p, e, i, d;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; p &gt;&gt; e &gt;&gt; i &gt;&gt; d;</span><br><span class="line">    <span class="keyword">int</span> sum = d;</span><br><span class="line">    d++;</span><br><span class="line">    <span class="keyword">while</span> (d)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((d - p) % <span class="number">23</span> == <span class="number">0</span> &amp;&amp; (d - e) % <span class="number">28</span> == <span class="number">0</span> &amp;&amp; (d - i) % <span class="number">33</span> == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; d - sum;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        d++;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(; (d - p) % <span class="number">23</span>; d++);</span><br><span class="line">    <span class="keyword">for</span>(; (d - e) % <span class="number">28</span>; d += <span class="number">23</span>);</span><br><span class="line">    <span class="keyword">for</span>(; (d - i) % <span class="number">33</span>; d += <span class="number">23</span> * <span class="number">28</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; d - sum;</span><br><span class="line"></span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-称硬币"><a href="#3-称硬币" class="headerlink" title="3.称硬币"></a>3.称硬币</h2><p><strong>题目</strong><br>有12枚硬币。其中有11枚真币和1枚假币。假币和真币重量不同， 但不知道假币比真币轻还是重。现在用一架天平称了这些币三次，告诉你称的结果，请你找出假币并且确定假币是轻是重（数据保证一能找出来）。<br><strong>输入</strong><br>第一行是测试数据组数。<br>每组数据有三行，每行表示一次称量的结果。银币标号为A-L。每次称量的结果用三个以空格隔开的字符串表示：天平左边放置的硬币，天平右边放置的硬币平衡状态。其中平衡状态用”up”,“down”,或”even”表示, 分别为右端高、右端低和平衡。天平左右的硬币数总是相等的。<br><strong>输入</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">ABCD EFGH even</span><br><span class="line">ABCI EFJK up</span><br><span class="line">ABIJ EFGH even</span><br></pre></td></tr></table></figure><br><strong>输出</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">K is the counterfeit coin and it is light.</span><br></pre></td></tr></table></figure><br><strong>思路</strong><br>可以将硬币从头开始遍历,对每一枚硬币进行轻重的判断.<br><strong>代码</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> Left[<span class="number">3</span>][<span class="number">7</span>];</span><br><span class="line"><span class="keyword">char</span> Right[<span class="number">3</span>][<span class="number">7</span>];</span><br><span class="line"><span class="keyword">char</span> res[<span class="number">3</span>][<span class="number">7</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1 </span></span><br><span class="line"><span class="comment">ABKD EKGH even </span></span><br><span class="line"><span class="comment">ABCI EFJH down </span></span><br><span class="line"><span class="comment">ABIJ EFGH even </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isFake</span><span class="params">(<span class="keyword">char</span> ch, <span class="keyword">bool</span> flag)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">0</span>, s = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">        l = <span class="number">0</span>, r = <span class="number">0</span>;</span><br><span class="line">        x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(Left[i][x] != <span class="string">&#x27;\0&#x27;</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(Left[i][x] == ch)&#123;</span><br><span class="line">                <span class="keyword">if</span>(flag)    </span><br><span class="line">                    l = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span>    </span><br><span class="line">                    l =<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            x++;</span><br><span class="line">        &#125;</span><br><span class="line">        x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(Right[i][x] != <span class="string">&#x27;\0&#x27;</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(Right[i][x] == ch)&#123;</span><br><span class="line">                <span class="keyword">if</span>(flag)    </span><br><span class="line">                    r = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span>    </span><br><span class="line">                    r =<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            x++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(res[i][<span class="number">0</span>] == <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line">            s = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(res[i][<span class="number">0</span>] == <span class="string">&#x27;u&#x27;</span>)</span><br><span class="line">            s = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(res[i][<span class="number">0</span>] == <span class="string">&#x27;d&#x27;</span>)</span><br><span class="line">            s = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">if</span>(r - l != s)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; Left[i] &gt;&gt; Right[i] &gt;&gt; res[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> ch = <span class="string">&#x27;A&#x27;</span>; ch &lt;= <span class="string">&#x27;L&#x27;</span>; ch++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(isFake(ch, <span class="literal">true</span>))&#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; ch &lt;&lt; <span class="string">&quot; is the counterfeit coin and it is light.\n&quot;</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(isFake(ch, <span class="literal">false</span>))&#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; ch &lt;&lt; <span class="string">&quot; is the counterfeit coin and it is heavy.\n&quot;</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-熄灯问题"><a href="#4-熄灯问题" class="headerlink" title="4.熄灯问题"></a>4.熄灯问题</h2><p><strong>题目</strong><br><a target="_blank" rel="noopener" href="http://bailian.openjudge.cn/practice/2811/">http://bailian.openjudge.cn/practice/2811/</a><br><strong>样例输入</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0 1 1 0 1 0</span><br><span class="line">1 0 0 1 1 1</span><br><span class="line">0 0 1 0 0 1</span><br><span class="line">1 0 0 1 0 1</span><br><span class="line">0 1 1 1 0 0</span><br></pre></td></tr></table></figure><br><strong>样例输出</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 0 1 0 0 1</span><br><span class="line">1 1 0 1 0 1</span><br><span class="line">0 0 1 0 1 1</span><br><span class="line">1 0 0 1 0 0</span><br><span class="line">0 1 0 0 0 0</span><br></pre></td></tr></table></figure><br><strong>思路</strong><br>可以看出只要第一行确定了情况,接下来几排也都确定情况,只需遍历第一行的所有情况,而又可以从输入案例看出,我们可以进行位运算,将第一行作为二进制储存.<br><strong>获得每一行的每一位的数字</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetBit</span><span class="params">(<span class="keyword">char</span> c, <span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (c &gt;&gt; i) &amp; <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><strong>储存每一行的二进制</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetBit</span><span class="params">(<span class="keyword">char</span> &amp; c, <span class="keyword">int</span> i ,<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(v)&#123;</span><br><span class="line">        c |= (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        c &amp;= ~(<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><strong>翻转该位上的数</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FilpBit</span><span class="params">(<span class="keyword">char</span> &amp; c, <span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    c ^= (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><strong>代码</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> oriLights[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">char</span> ligths[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">char</span> result[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetBit</span><span class="params">(<span class="keyword">char</span> c, <span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (c &gt;&gt; i) &amp; <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetBit</span><span class="params">(<span class="keyword">char</span> &amp; c, <span class="keyword">int</span> i ,<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(v)&#123;</span><br><span class="line">        c |= (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        c &amp;= ~(<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FilpBit</span><span class="params">(<span class="keyword">char</span> &amp; c, <span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    c ^= (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OutPut</span><span class="params">(<span class="keyword">char</span> result[])</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">6</span>; j++)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; GetBit(result[i], j);</span><br><span class="line">            <span class="keyword">if</span>( j &lt; <span class="number">5</span>)</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> switchs;</span><br><span class="line">    <span class="comment">// int sum[5][6] = &#123;0&#125;;</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">6</span>; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> s;</span><br><span class="line">                <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">                SetBit(oriLights[i], j, s);</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>  n = <span class="number">0</span>; n &lt; <span class="number">64</span>; n++)</span><br><span class="line">        &#123;</span><br><span class="line">            switchs = n;</span><br><span class="line">            <span class="built_in">memcpy</span>(ligths, oriLights, <span class="keyword">sizeof</span>(oriLights));</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">                result[i] = switchs;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span>  j = <span class="number">0</span>; j &lt; <span class="number">6</span>; j++)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(GetBit(switchs, j))&#123;</span><br><span class="line">                        <span class="keyword">if</span>(j &gt; <span class="number">0</span>)</span><br><span class="line">                            FilpBit(ligths[i], j - <span class="number">1</span>);</span><br><span class="line">                        FilpBit(ligths[i], j);</span><br><span class="line">                        <span class="keyword">if</span>(j &lt; <span class="number">5</span>)</span><br><span class="line">                            FilpBit(ligths[i], j + <span class="number">1</span>);</span><br><span class="line">                    &#125;                   </span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(i &lt; <span class="number">4</span>)</span><br><span class="line">                    ligths[i + <span class="number">1</span>] ^= switchs;</span><br><span class="line">                switchs = ligths[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(ligths[<span class="number">4</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">                OutPut(result);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>枚举有些时候将问题细分,方便计算机枚举更少,但是更精准,加快执行速度</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>数据结构之枚举</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://linyunshen.xyz/posts/51148.html">http://linyunshen.xyz/posts/51148.html</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>砂糖</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2022-01-25</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2022-02-16</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/shatangkeai/images/img/二次元 (12).jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/posts/60366.html"><img class="prev-cover" src="https://api.vvhan.com/api/acgimg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">位运算</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> Related Articles</span></div><div class="relatedPosts-list"><div><a href="/posts/30787.html" title="数据结构之递归(-)"><img class="cover" src="https://cdn.jsdelivr.net/gh/shatangkeai/images/img/二次元 (21).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-03</div><div class="title">数据结构之递归(-)</div></div></a></div><div><a href="/posts/48475.html" title="数据结构之递归(二)"><img class="cover" src="https://cdn.jsdelivr.net/gh/shatangkeai/images/img/二次元 (22).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-04</div><div class="title">数据结构之递归(二)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Livere</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NTM2MS8zMTgyOA=="></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/shatangkeai/images/logo/shatang.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">砂糖</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/shatangkeai"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/shatangkeai" target="_blank" title="Github"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-rat"></use></svg></a><a class="social-icon faa-parent animated-hover" href="tencent://message/?uin=2994172661&amp;Site=potisoft&amp;Menu=yes" target="_blank" title="Email"><i class="fa-fw fas fa-envelope faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/225564141" target="_blank" title="Bilibili"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-ox"></use></svg></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%9E%9A%E4%B8%BE%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">一.枚举是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E6%9E%9A%E4%B8%BE%E7%9A%84%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">二.枚举的算法例题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%8C%E7%BE%8E%E7%AB%8B%E6%96%B9"><span class="toc-number">2.1.</span> <span class="toc-text">1.完美立方</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%94%9F%E7%90%86%E5%91%A8%E6%9C%9F"><span class="toc-number">2.2.</span> <span class="toc-text">2.生理周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%A7%B0%E7%A1%AC%E5%B8%81"><span class="toc-number">2.3.</span> <span class="toc-text">3.称硬币</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%86%84%E7%81%AF%E9%97%AE%E9%A2%98"><span class="toc-number">2.4.</span> <span class="toc-text">4.熄灯问题</span></a></li></ol></li></ol></div></div><div class="card-widget card-shuo"><div class="card-content" style="height:auto;min-height:280px;"><div class="item-headline"><i class="fas fa-comments"></i><span>碎碎念</span><a id="shuovisualchange" style="cursor:pointer;float:right" onclick="shuovisualchange()">编辑</a></div><div id="artitalk_main" style="width:100%;height:100%;padding:1px"></div></div></div><script async="async">function shuovisualchange() {
+let btninner = document.getElementById("shuovisualchange");
+let powervis = document.getElementsByClassName('power')[0].style.display;
+if (powervis == "none") {
+  document.getElementsByClassName('power')[0].style.display = 'inline';
+  var authorlist = document.getElementsByClassName("shuoshuo_author_img");
+  if (authorlist) {
+    for (var i = 0; i < authorlist.length; i++) {
+      var authorimg = authorlist[i];
+      authorimg.style.display = "inline";
+    }
+  }
+  btninner.innerHTML = "隐藏";
+} else {
+  document.getElementsByClassName('power')[0].style.display = 'none';
+  var authorlist = document.getElementsByClassName("shuoshuo_author_img");
+  if (authorlist) {
+    for (var i = 0; i < authorlist.length; i++) {
+      var authorimg = authorlist[i];
+      authorimg.style.display = "none";
+    }
+  }
+  btninner.innerHTML = "编辑";
+}
+}
+
+</script><div class="pjax-reload"><script>(()=>{
+  let setting = {
+    appId: 'O02qkuPegk80p01AhD910O43-MdYXbMMI',
+    appKey: 'YJcdi3xXq7CRWiApGX1vWzwX',
+  }
+
+  if (true) {
+    const otherSetting = {"serverURL":"https://o02qkupe.api.lncldglobal.com","lang":"zh","pageSize":1,"color1":"#49b1f5","color2":"#00c4b6","atEmoji":{"Mafumafu1":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749454.png","Mafumafu2":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749455.png","Mafumafu3":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749456.png","Mafumafu4":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749457.png","Mafumafu5":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749458.png","Mafumafu6":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749459.png","Mafumafu7":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749460.png","Mafumafu8":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749461.png","Mafumafu9":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749462.png","Mafumafu10":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749463.png","Mafumafu11":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749464.png","Mafumafu12":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749465.png","Mafumafu13":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749466.png","Mafumafu14":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749467.png","Mafumafu15":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749468.png","Mafumafu16":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749469.png","Mafumafu17":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749470.png","Mafumafu18":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749471.png","Mafumafu19":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749472.png","Mafumafu20":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749473.png","Mafumafu21":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749474.png","Mafumafu22":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749475.png","Mafumafu23":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749476.png","Mafumafu24":"https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Mafumafu/199749477.png"}}
+    setting = Object.assign({}, setting, otherSetting)
+  }
+
+  const init = () => {
+    new Artitalk(setting)
+  }
+
+  if (typeof Artitalk === 'function') {
+    init()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/artitalk').then(init)
+  }
+})()</script></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/53772.html" title="爬虫获取网站图片"><img src="https://cdn.jsdelivr.net/gh/shatangkeai/images/img/二次元 (24).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="爬虫获取网站图片"/></a><div class="content"><a class="title" href="/posts/53772.html" title="爬虫获取网站图片">爬虫获取网站图片</a><time datetime="2022-02-10T14:00:00.000Z" title="Created 2022-02-10 22:00:00">2022-02-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/55184.html" title="免费虚拟主机搭建wordpress博客"><img src="https://cdn.jsdelivr.net/gh/shatangkeai/images/img/二次元 (23).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="免费虚拟主机搭建wordpress博客"/></a><div class="content"><a class="title" href="/posts/55184.html" title="免费虚拟主机搭建wordpress博客">免费虚拟主机搭建wordpress博客</a><time datetime="2022-02-05T13:30:00.000Z" title="Created 2022-02-05 21:30:00">2022-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/48475.html" title="数据结构之递归(二)"><img src="https://cdn.jsdelivr.net/gh/shatangkeai/images/img/二次元 (22).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构之递归(二)"/></a><div class="content"><a class="title" href="/posts/48475.html" title="数据结构之递归(二)">数据结构之递归(二)</a><time datetime="2022-02-04T13:26:00.000Z" title="Created 2022-02-04 21:26:00">2022-02-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/30787.html" title="数据结构之递归(-)"><img src="https://cdn.jsdelivr.net/gh/shatangkeai/images/img/二次元 (21).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构之递归(-)"/></a><div class="content"><a class="title" href="/posts/30787.html" title="数据结构之递归(-)">数据结构之递归(-)</a><time datetime="2022-02-02T16:00:00.000Z" title="Created 2022-02-03 00:00:00">2022-02-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/51148.html" title="hexo一些插件部署命令"><img src="https://cdn.jsdelivr.net/gh/shatangkeai/images/img/二次元 (20).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo一些插件部署命令"/></a><div class="content"><a class="title" href="/posts/51148.html" title="hexo一些插件部署命令">hexo一些插件部署命令</a><time datetime="2022-01-30T16:00:00.000Z" title="Created 2022-01-31 00:00:00">2022-01-31</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 砂糖</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div id="workboard"></div><script async="async" src="/"></script><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo"/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender"/></a><a class="github-badge" target="_blank" href="https://www.jsdelivr.com/" style="margin-inline:5px"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr"/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px"><img src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel"/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px"><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&amp;logo=Codio"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris"/></a></p></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 5000);</script></div><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 's55DGegT0zguofu0tjs5oHer-gzGzoHsz',
+      appKey: 'fQKQY3G0j9BxG145c3blQv9X',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      master: 'd4e7????4d361ad7????44a14e9e2a94'.split(','),
+      friends: '5c?????bfe6rfc72a????e268ad3819c,7c?????bfe65fc02a????e2????3919c'.split(','),
+      tagMeta: '博主,小伙伴,访客'.split(','),
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js').then(initValine)
+}
+
+if ('Livere' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>var gitcalendar = new Vue({
+  el: '#gitcalendar',
+  data: {
+    simplemode: true, 
+    user: 'shatangkeai',
+    fixed: 'fixed',
+    px: 'px',
+    x: '',
+    y: '',
+    span1: '',
+    span2: '',
+    month: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+    monthchange: [],
+    oneyearbeforeday: '',
+    thisday: '',
+    amonthago: '',
+    aweekago: '',
+    weekdatacore: 0,
+    datacore: 0,
+    total: 0,
+    datadate: '',
+    data: [],
+    positionplusdata: [],
+    firstweek: [],
+    lastweek: [],
+    beforeweek: [],
+    thisweekdatacore: 0,
+    mounthbeforeday: 0,
+    mounthfirstindex: 0,
+    crispedges: 'crispedges',
+    thisdayindex: 0,
+    amonthagoindex: 0,
+    amonthagoweek: [],
+    firstdate: [],
+    first2date: [],
+    montharrbefore: [],
+    monthindex: 0,
+    color: ['#e4dfd7', '#f9f4dc', '#f7e8aa', '#f7e8aa', '#f8df72', '#fcd217', '#fcc515', '#f28e16', '#fb8b05', '#d85916', '#f43e06']
+  },
+  methods: {
+    selectStyle(data, event) {
+      document.querySelector('.angle-wrapper').style.display = 'block'
+      this.span1 = data.date;
+      this.span2 = data.count;
+      this.x = event.clientX - 100;
+      this.y = event.clientY - 60
+    },
+    outStyle() {
+      document.querySelector('.angle-wrapper').style.display = 'none'
+    },
+    thiscolor(x) {
+      if (x === 0) {
+        let i = parseInt(x / 2);
+        return this.color[0]
+      } else if (x < 2) {
+        return this.color[1]
+      } else if (x < 20) {
+        let i = parseInt(x / 2);
+        return this.color[i]
+      } else {
+        return this.color[9]
+      }
+    },
+  }
+});
+var apiurl = 'github-calendar-api.vercel.app' ? 'https://github-calendar-api.vercel.app/api?' : 'https://githubapi.ryanchristian.dev/user/'
+var githubapiurl = apiurl + gitcalendar.user;
+//canvas绘图
+function responsiveChart() {
+  let c = document.getElementById("gitcanvas");
+  if (c) {
+    let cmessage = document.getElementById("gitmessage");
+    let ctx = c.getContext("2d");
+    c.width = document.getElementById("gitcalendarcanvasbox").offsetWidth;
+    let linemaxwitdh = 0.96 * c.width / gitcalendar.data.length;
+    c.height = 9 * linemaxwitdh;
+    let lineminwitdh = 0.8 * linemaxwitdh;
+    let setposition = {
+      x: 0.02 * c.width,
+      y: 0.025 * c.width
+    };
+    for (let week in gitcalendar.data) {
+      weekdata = gitcalendar.data[week];
+      for (let day in weekdata) {
+        let dataitem = {
+          date: "",
+          count: "",
+          x: 0,
+          y: 0
+        };
+        gitcalendar.positionplusdata.push(dataitem);
+        ctx.fillStyle = gitcalendar.thiscolor(weekdata[day].count);
+        setposition.y = Math.round(setposition.y * 100) / 100;
+        dataitem.date = weekdata[day].date;
+        dataitem.count = weekdata[day].count;
+        dataitem.x = setposition.x;
+        dataitem.y = setposition.y;
+        ctx.fillRect(setposition.x, setposition.y, lineminwitdh, lineminwitdh);
+        setposition.y = setposition.y + linemaxwitdh
+      };
+      setposition.y = 0.025 * c.width;
+      setposition.x = setposition.x + linemaxwitdh
+    };
+    ctx.font = "600  Arial";
+    ctx.fillStyle = '#aaa';
+    ctx.fillText("日", 0, 1.9 * linemaxwitdh);
+    ctx.fillText("二", 0, 3.9 * linemaxwitdh);
+    ctx.fillText("四", 0, 5.9 * linemaxwitdh);
+    ctx.fillText("六", 0, 7.9 * linemaxwitdh);
+    let monthindexlist = c.width / 24;
+    for (let index in gitcalendar.monthchange) {
+      ctx.fillText(gitcalendar.monthchange[index], monthindexlist, 0.7 * linemaxwitdh);
+      monthindexlist = monthindexlist + c.width / 12
+    };
+    cmessage.onmousemove = function(event) {
+      document.querySelector('.angle-wrapper').style.display = 'none'
+    };
+    c.onmousemove = function(event) {
+      document.querySelector('.angle-wrapper').style.display = 'none'
+      getMousePos(c, event);
+    };
+
+    function getMousePos(canvas, event) {
+      var rect = canvas.getBoundingClientRect();
+      var x = event.clientX - rect.left * (canvas.width / rect.width);
+      var y = event.clientY - rect.top * (canvas.height / rect.height);
+      //console.log("x:"+x+",y:"+y);
+      for (let item of gitcalendar.positionplusdata) {
+        let lenthx = x - item.x;
+        let lenthy = y - item.y;
+        //console.log(lenthx,lenthy);
+        if (0 < lenthx && lenthx < lineminwitdh) {
+          if (0 < lenthy && lenthy < lineminwitdh) {
+            //console.log(item.date,item.count)
+            document.querySelector('.angle-wrapper').style.display = 'block'
+            gitcalendar.span1 = item.date;
+            gitcalendar.span2 = item.count;
+            gitcalendar.x = event.clientX - 100;
+            gitcalendar.y = event.clientY - 60
+          }
+        }
+        //if(0< x - item.x <lineminwitdh&&0< y - item.y <lineminwitdh){
+        //console.log(item.count,item.date);
+        //}
+      }
+    }
+  }
+}
+//数据统计算法
+function addlastmonth() {
+  if (gitcalendar.thisdayindex === 0) {
+    thisweekcore(52);
+    thisweekcore(51);
+    thisweekcore(50);
+    thisweekcore(49);
+    thisweekcore(48);
+    gitcalendar.thisweekdatacore += gitcalendar.firstdate[6].count;
+    gitcalendar.amonthago = gitcalendar.firstdate[6].date
+  } else {
+    thisweekcore(52);
+    thisweekcore(51);
+    thisweekcore(50);
+    thisweekcore(49);
+    thisweek2core();
+    gitcalendar.amonthago = gitcalendar.first2date[gitcalendar.thisdayindex - 1].date
+  }
+};
+
+function thisweek2core() {
+  for (let i = gitcalendar.thisdayindex - 1; i < gitcalendar.first2date.length; i++) {
+    gitcalendar.thisweekdatacore += gitcalendar.first2date[i].count
+  }
+};
+
+function thisweekcore(index) {
+  for (let item of gitcalendar.data[index]) {
+    gitcalendar.thisweekdatacore += item.count
+  }
+};
+
+function addlastweek() {
+  for (let item of gitcalendar.lastweek) {
+    gitcalendar.weekdatacore += item.count
+  }
+};
+
+function addbeforeweek() {
+  for (let i = gitcalendar.thisdayindex; i < gitcalendar.beforeweek.length; i++) {
+    gitcalendar.weekdatacore += gitcalendar.beforeweek[i].count
+  }
+};
+
+function addweek(data) {
+  if (gitcalendar.thisdayindex === 6) {
+    gitcalendar.aweekago = gitcalendar.lastweek[0].date;
+    addlastweek()
+  } else {
+    lastweek = data.contributions[51];
+    gitcalendar.aweekago = lastweek[gitcalendar.thisdayindex + 1].date;
+    addlastweek();
+    addbeforeweek()
+  }
+}
+
+fetch(githubapiurl)
+  .then(data => data.json())
+  .then(data => {
+    gitcalendar.data = data.contributions;
+    gitcalendar.total = data.total;
+    gitcalendar.first2date = gitcalendar.data[48];
+    gitcalendar.firstdate = gitcalendar.data[47];
+    gitcalendar.firstweek = data.contributions[0];
+    gitcalendar.lastweek = data.contributions[52];
+    gitcalendar.beforeweek = data.contributions[51];
+    gitcalendar.thisdayindex = gitcalendar.lastweek.length - 1;
+    gitcalendar.thisday = gitcalendar.lastweek[gitcalendar.thisdayindex].date;
+    gitcalendar.oneyearbeforeday = gitcalendar.firstweek[0].date;
+    gitcalendar.monthindex = gitcalendar.thisday.substring(5, 7) * 1;
+    gitcalendar.montharrbefore = gitcalendar.month.splice(gitcalendar.monthindex, 12 - gitcalendar.monthindex);
+    gitcalendar.monthchange = gitcalendar.montharrbefore.concat(gitcalendar.month);
+    addweek(data);
+    addlastmonth();
+    responsiveChart();
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+
+//手机版更换为svg绘制
+if (document.getElementById("gitcalendarcanvasbox") && (document.getElementById("gitcalendarcanvasbox").offsetWidth < 500)) {
+  gitcalendar.simplemode = false
+}
+//当改变窗口大小时重新绘制canvas
+window.onresize = function() {
+  if (gitcalendar.simplemode) responsiveChart()
+}
+
+//解决滚动滑轮时出现的标签显示
+window.onscroll = function() {
+  if (document.querySelector('.angle-wrapper')) {
+    document.querySelector('.angle-wrapper').style.display = 'none'
+  }
+};</script></div><script defer src="/live2d-widget/autoload.js"></script><script defer src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@latest/source/js/issues.min.js"></script><script async src="//at.alicdn.com/t/font_2264842_3izu8i5eoc2.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1s');
+    arr[i].setAttribute('data-wow-delay', '0');
+    arr[i].setAttribute('data-wow-offset', '0');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer="defer" src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer="defer" src="/js/custom/wow_init.js"></script><div class="app-refresh" id="app-refresh" style="position: fixed;top: -2.2rem;left: 0;right: 0;z-index: 99999;padding: 0 1rem;font-size: 15px;height: 2.2rem;transition: all 0.3s ease;"><div class="app-refresh-wrap" style=" display: flex;color: #fff;height: 100%;align-items: center;justify-content: center;"><label>✨ 糖果屋上新啦！ 👉</label><a href="javascript:void(0)" onclick="location.reload()"><span style="color: #fff;text-decoration: underline;cursor: pointer;">🍭查看新品🍬</span></a></div></div><script>if ('serviceWorker' in navigator) {
+if (navigator.serviceWorker.controller) {
+navigator.serviceWorker.addEventListener('controllerchange', function() {
+showNotification()
+})
+}
+window.addEventListener('load', function() {
+navigator.serviceWorker.register('/sw.js')
+})
+}
+function showNotification() {
+if (GLOBAL_CONFIG.Snackbar) {
+var snackbarBg =
+document.documentElement.getAttribute('data-theme') === 'light' ?
+GLOBAL_CONFIG.Snackbar.bgLight :
+GLOBAL_CONFIG.Snackbar.bgDark
+var snackbarPos = GLOBAL_CONFIG.Snackbar.position
+Snackbar.show({
+text: '✨ 糖果屋上新啦！ 👉',
+backgroundColor: snackbarBg,
+duration: 500000,
+pos: snackbarPos,
+actionText: '🍭查看新品🍬',
+actionTextColor: '#fff',
+onActionClick: function(e) {
+location.reload()
+},
+})
+} else {
+var showBg =
+document.documentElement.getAttribute('data-theme') === 'light' ?
+'#49b1f5' :
+'#1f1f1f'
+var cssText = `top: 0; background: ${showBg};`
+document.getElementById('app-refresh').style.cssText = cssText
+}
+}</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
