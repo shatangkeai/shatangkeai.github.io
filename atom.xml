@@ -3,11 +3,11 @@
   <title>做自己喜欢的</title>
   
   
-  <link href="http://linyunshen.xyz/atom.xml" rel="self"/>
+  <link href="http://qianna.cyou/atom.xml" rel="self"/>
   
-  <link href="http://linyunshen.xyz/"/>
-  <updated>2022-02-16T01:05:03.099Z</updated>
-  <id>http://linyunshen.xyz/</id>
+  <link href="http://qianna.cyou/"/>
+  <updated>2022-02-19T12:25:52.407Z</updated>
+  <id>http://qianna.cyou/</id>
   
   <author>
     <name>砂糖</name>
@@ -17,9 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Cloud Drive 云盘挂载本地</title>
+    <link href="http://qianna.cyou/posts/35414.html"/>
+    <id>http://qianna.cyou/posts/35414.html</id>
+    <published>2022-02-19T12:00:00.000Z</published>
+    <updated>2022-02-19T12:25:52.407Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-Cloud-Drive"><a href="#1-Cloud-Drive" class="headerlink" title="1.Cloud Drive"></a>1.Cloud Drive</h1><blockquote><p>Cloud Drive可以将阿里云盘等一些云盘挂载到本地</p></blockquote><p>链接:<a href="https://wwu.lanzout.com/ipIp800c5h2h">Cloud Drive</a>密码:e6ei<br>例如:<img src="https://s2.loli.net/2022/02/19/mFSRy5aKC6gxekE.png" alt="image.png"></p><h1 id="2-使用Cloud-Drive"><a href="#2-使用Cloud-Drive" class="headerlink" title="2.使用Cloud Drive"></a>2.使用Cloud Drive</h1><p><strong>安装</strong><br><img src="https://s2.loli.net/2022/02/19/UC3IGqymVc29Ou6.png" alt="image.png"><br><strong>选择要挂载的云盘</strong><br><img src="https://s2.loli.net/2022/02/19/pZIMNxSLD8K4sHf.png" alt="image.png"><br>扫码登入即可,<strong>点击上方注册</strong><br><img src="https://s2.loli.net/2022/02/19/o6wqJlDx7NUb42I.png" alt="image.png"><br><strong>选择挂载的盘符</strong><br><img src="https://s2.loli.net/2022/02/19/VB9hg7marOEAX1C.png" alt="image.png"><br>选择改变缓存目录,不要放置C盘,<strong>会炸</strong><br><img src="https://s2.loli.net/2022/02/19/wdQMuyINaK1q9eE.png" alt="image.png"><br>以上设置完即可</p>]]></content>
+    
+    
+    <summary type="html">云盘挂载本地</summary>
+    
+    
+    
+    <category term="实用软件" scheme="http://qianna.cyou/categories/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
+    
+    
+    <category term="云盘" scheme="http://qianna.cyou/tags/%E4%BA%91%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>爬虫获取网站图片</title>
-    <link href="http://linyunshen.xyz/posts/53772.html"/>
-    <id>http://linyunshen.xyz/posts/53772.html</id>
+    <link href="http://qianna.cyou/posts/53772.html"/>
+    <id>http://qianna.cyou/posts/53772.html</id>
     <published>2022-02-10T14:00:00.000Z</published>
     <updated>2022-02-16T01:05:03.099Z</updated>
     
@@ -30,17 +51,17 @@
     
     
     
-    <category term="爬虫" scheme="http://linyunshen.xyz/categories/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="http://qianna.cyou/categories/%E7%88%AC%E8%99%AB/"/>
     
     
-    <category term="技术" scheme="http://linyunshen.xyz/tags/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="http://qianna.cyou/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>免费虚拟主机搭建wordpress博客</title>
-    <link href="http://linyunshen.xyz/posts/55184.html"/>
-    <id>http://linyunshen.xyz/posts/55184.html</id>
+    <link href="http://qianna.cyou/posts/55184.html"/>
+    <id>http://qianna.cyou/posts/55184.html</id>
     <published>2022-02-05T13:30:00.000Z</published>
     <updated>2022-02-16T01:05:03.276Z</updated>
     
@@ -51,17 +72,17 @@
     
     
     
-    <category term="博客" scheme="http://linyunshen.xyz/categories/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="博客" scheme="http://qianna.cyou/categories/%E5%8D%9A%E5%AE%A2/"/>
     
     
-    <category term="虚拟空间" scheme="http://linyunshen.xyz/tags/%E8%99%9A%E6%8B%9F%E7%A9%BA%E9%97%B4/"/>
+    <category term="虚拟空间" scheme="http://qianna.cyou/tags/%E8%99%9A%E6%8B%9F%E7%A9%BA%E9%97%B4/"/>
     
   </entry>
   
   <entry>
     <title>数据结构之递归(二)</title>
-    <link href="http://linyunshen.xyz/posts/48475.html"/>
-    <id>http://linyunshen.xyz/posts/48475.html</id>
+    <link href="http://qianna.cyou/posts/48475.html"/>
+    <id>http://qianna.cyou/posts/48475.html</id>
     <published>2022-02-04T13:26:00.000Z</published>
     <updated>2022-02-16T01:05:03.218Z</updated>
     
@@ -72,19 +93,19 @@
     
     
     
-    <category term="蓝桥杯" scheme="http://linyunshen.xyz/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/"/>
+    <category term="蓝桥杯" scheme="http://qianna.cyou/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/"/>
     
     
-    <category term="数据结构" scheme="http://linyunshen.xyz/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="数据结构" scheme="http://qianna.cyou/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-    <category term="算法" scheme="http://linyunshen.xyz/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="http://qianna.cyou/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>数据结构之递归(-)</title>
-    <link href="http://linyunshen.xyz/posts/30787.html"/>
-    <id>http://linyunshen.xyz/posts/30787.html</id>
+    <link href="http://qianna.cyou/posts/30787.html"/>
+    <id>http://qianna.cyou/posts/30787.html</id>
     <published>2022-02-02T16:00:00.000Z</published>
     <updated>2022-02-16T01:05:03.165Z</updated>
     
@@ -95,33 +116,12 @@
     
     
     
-    <category term="蓝桥杯" scheme="http://linyunshen.xyz/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/"/>
+    <category term="蓝桥杯" scheme="http://qianna.cyou/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/"/>
     
     
-    <category term="数据结构" scheme="http://linyunshen.xyz/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="数据结构" scheme="http://qianna.cyou/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-    <category term="算法" scheme="http://linyunshen.xyz/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo一些插件部署命令</title>
-    <link href="http://linyunshen.xyz/posts/51148.html"/>
-    <id>http://linyunshen.xyz/posts/51148.html</id>
-    <published>2022-01-30T16:00:00.000Z</published>
-    <updated>2022-02-16T01:05:03.293Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="1-哔哩哔哩插件部署代码"><a href="#1-哔哩哔哩插件部署代码" class="headerlink" title="1.哔哩哔哩插件部署代码"></a>1.哔哩哔哩插件部署代码</h1><blockquote><p>要在hexo g或者hexo deploy前执行</p><ol><li>更新数据 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo bangumi -u</span><br></pre></td></tr></table></figure></li><li>删除数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo bangumi -d</span><br></pre></td></tr></table></figure><h1 id="2-搜索引擎布置"><a href="#2-搜索引擎布置" class="headerlink" title="2.搜索引擎布置"></a>2.搜索引擎布置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo algolia</span><br></pre></td></tr></table></figure></li></ol></blockquote>]]></content>
-    
-    
-    <summary type="html">部署代码</summary>
-    
-    
-    
-    <category term="博客" scheme="http://linyunshen.xyz/categories/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-    <category term="hexo插件" scheme="http://linyunshen.xyz/tags/hexo%E6%8F%92%E4%BB%B6/"/>
+    <category term="算法" scheme="http://qianna.cyou/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
