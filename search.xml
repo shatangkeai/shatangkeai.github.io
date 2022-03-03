@@ -4,6 +4,85 @@
   
     
     <entry>
+      <title>油猴+idm破解百度网盘不限速</title>
+      <link href="posts/56074.html"/>
+      <url>posts/56074.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>百度网盘下载不限速<br>首先确定你的浏览器不是什么360等等一些浏览器,使用Edge浏览器或者是谷歌浏览器,接着把默认浏览器改成Edge<img src="https://s2.loli.net/2022/03/03/Fu2Bh5bWH1Vdk4f.png" alt="image.png">如图,接下来就可以开始了</p></blockquote><h1 id="1-下载油猴插件"><a href="#1-下载油猴插件" class="headerlink" title="1.下载油猴插件"></a>1.下载油猴插件</h1><p>  进入Edge扩展中心<br> <img src="https://s2.loli.net/2022/03/03/QhDCMyredUt6J8R.png" alt="image.png"><br> <img src="https://s2.loli.net/2022/03/03/WHf8LtYpje5M4wx.png" alt="image.png"><br> 搜索tampermonkey下载,第二个绿色的<br> <img src="https://s2.loli.net/2022/03/03/J7uhO2aQomL4N1D.png" alt="image.png"></p><h1 id="2-下载百度网盘插件"><a href="#2-下载百度网盘插件" class="headerlink" title="2.下载百度网盘插件"></a>2.下载百度网盘插件</h1><p>   <a href="https://greasyfork.org/zh-CN/scripts/418182-%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E7%AE%80%E6%98%93%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B-%E7%9B%B4%E9%93%BE%E4%B8%8B%E8%BD%BD%E5%A4%8D%E6%B4%BB%E7%89%88">点这里</a>安装</p><h1 id="3-下载idm"><a href="#3-下载idm" class="headerlink" title="3.下载idm"></a>3.下载idm</h1><p>   <a href="https://wwu.lanzout.com/itPzc00xd48j">点这里下载</a><br>   解压出来,点击绿化即可<br>   <img src="https://s2.loli.net/2022/03/03/exrZSptwGQCfzAV.png" alt="image.png"></p><ol><li>配置idm,进入idm页面,点击菜单栏:下载-&gt;选项-&gt;下载<img src="https://s2.loli.net/2022/03/03/6xTDBAFKOGsCJuU.png" alt="image.png"></li><li>配置最后一行的ua:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netdisk;7.0.3.2;PC;PC-Windows;10.0.17763</span><br></pre></td></tr></table></figure>替换即可</li><li>点击连接<br> <img src="https://s2.loli.net/2022/03/03/TOhH5QFmgfXyKwp.png" alt="image.png">将默认最大连接数改为4即可</li></ol><h1 id="4-进入百度网盘网页版"><a href="#4-进入百度网盘网页版" class="headerlink" title="4. 进入百度网盘网页版"></a>4. 进入百度网盘网页版</h1><p><img src="https://s2.loli.net/2022/03/03/WzDRtL1C2OxXFVc.png" alt="image.png"><br>出现简易下载助手就成功了,下载就是点击要下载的文件,注意一次只能选择一个文件(不包括文件夹)<br><img src="https://s2.loli.net/2022/03/03/YITNydAcBSU6bEi.png" alt="image.png"><br><img src="https://s2.loli.net/2022/03/03/oJf2kOwR6cZmYXU.png" alt="image.png"><br>点击复制直链地址,进入idm页面,点击新建任务,点击确定,点击下载即可完成</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>动态规划（－）</title>
+      <link href="posts/48128.html"/>
+      <url>posts/48128.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-拦截导弹"><a href="#1-拦截导弹" class="headerlink" title="1.拦截导弹"></a>1.拦截导弹</h1><p><a href="http://bailian.openjudge.cn/practice/2945/">拦截导弹</a></p><p><strong>思路</strong>：<br>题目的中表示每一次的高度不得超过前一发的高度，所以我们要寻找的就是一行数组的最大下降长度,</p><p><strong>代码</strong>：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 26</span></span><br><span class="line"><span class="keyword">int</span> k;</span><br><span class="line"><span class="keyword">int</span> num[MAX];</span><br><span class="line"><span class="keyword">int</span> numk[MAX] = &#123;<span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; num[i];</span><br><span class="line">        numk[i] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>  i = <span class="number">1</span>; i &lt; k; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(num[j] &gt;= num[i])</span><br><span class="line">                numk[i] = max(numk[j] + <span class="number">1</span>, numk[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; * max_element(numk, numk + k) ;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 蓝桥杯 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据结构之二分算法</title>
+      <link href="posts/13363.html"/>
+      <url>posts/13363.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-二分算法"><a href="#1-二分算法" class="headerlink" title="1. 二分算法"></a>1. 二分算法</h1><blockquote><p>通过左右相互逼进来取得更加精准的答案,同时比普通的查询更加快速,但是前提必须是要区间是递减或者递增的</p><h1 id="2-例题"><a href="#2-例题" class="headerlink" title="2.例题"></a>2.例题</h1><h2 id="1-Aggressive-cows"><a href="#1-Aggressive-cows" class="headerlink" title="1.Aggressive cows"></a>1.Aggressive cows</h2><p><a href="http://cxsjsxmooc.openjudge.cn/2022t2winter/007/">Aggressive cows</a><br>题目大致意思:将奶牛放入摊位中,使它们的距离变得尽可能的小<br><strong>思路</strong>:<br>首先将输入的摊位的位置排序,因为要使用二分法必须保证有序,用最大最小的值作为区间边界值,进行二分即可<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100001</span></span><br><span class="line"><span class="keyword">int</span> a[N], n, m;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">nai</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = a[<span class="number">0</span>], count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">        <span class="keyword">if</span>(a[i] - t &gt;= k)&#123;</span><br><span class="line">            count++;</span><br><span class="line">            t = a[i];</span><br><span class="line">            <span class="keyword">if</span>(count == m)  <span class="comment">//如果相同即可表示该位置可以,进行下一个位置的判断</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a, a + n);</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = a[n - <span class="number">1</span>] - a[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> mid = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(left &lt;= right)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(nai(mid))</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; left - <span class="number">1</span>;   </span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 蓝桥杯 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cloud Drive 云盘挂载本地</title>
       <link href="posts/35414.html"/>
       <url>posts/35414.html</url>
